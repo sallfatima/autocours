@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: autocours
-          image: votre_dockerhub/autocours:latest
+          image:fa6060/autocours:latest
           ports:
             - containerPort: 8000
           envFrom:

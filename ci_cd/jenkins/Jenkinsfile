@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/votre-compte/autocours.git'
+                git 'https://github.com/sallfatima/autocours.git'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t votre_dockerhub/autocours:latest .'
+                sh 'docker build -t fa6060/autocours:latest .'
             }
         }
         stage('Run Tests') {

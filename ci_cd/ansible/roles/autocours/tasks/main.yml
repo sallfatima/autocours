@@ -1,12 +1,12 @@
 ---
 - name: Cloner ou mettre à jour le dépôt AutoCours
   git:
-    repo: "https://github.com/votre-compte/autocours.git"
+    repo: "https://github.com/sallfatima/autocours.git"
     dest: /opt/autocours
     version: main
 
 - name: Construire l'image Docker
-  shell: docker build -t votre_dockerhub/autocours:latest /opt/autocours
+  shell: docker build -t fa6060/autocours:latest /opt/autocours
 
 - name: Déployer sur Kubernetes
   shell: kubectl apply -f /opt/autocours/k8s/

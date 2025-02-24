@@ -21,7 +21,7 @@ enrichie par un module RAG et utilisant un modèle LLM (KingNish/Qwen2.5-0.5b-Te
 
 1. Cloner le dépôt :
    ```bash
-   git clone https://github.com/votre-compte/autocours.git
+   git clone https://github.com/sallfatima/autocours.git
    cd autocours
 
 2. Installer les dépendances avec Poetry :
