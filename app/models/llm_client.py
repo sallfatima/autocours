@@ -6,6 +6,8 @@ from typing import Any
 import os
 import mlflow
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from app.secrets_manager import load_secrets
+
 
 class LLMClient:
     """
@@ -19,8 +21,9 @@ class LLMClient:
         self.model_name: str = "KingNish/Qwen2.5-0.5b-Test-ft"
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name)
-        self.api_key: str = os.getenv("LLM_API_KEY", "votre_api_key")
-        self.api_url: str = os.getenv("LLM_API_URL", "https://api.example.com/generate")
+        self.api_key: str = load_secrets().get("LLM_API_KEY", "votre_api_key")
+        self.api_url: str = load_secrets().get("LLM_API_URL", "https://api.example.com/generate")
+
 
     def generate_text(self, prompt: str, max_length: int = 100) -> str:
         """
