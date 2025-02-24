@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/votre-compte/autocours.git'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t votre_dockerhub/autocours:latest .'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'pytest --maxfail=1 --disable-warnings -q'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'kubectl apply -f k8s/'
+            }
+        }
+    }
+}

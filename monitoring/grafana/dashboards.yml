@@ -1,0 +1,9 @@
+dashboards:
+  - name: AutoCours Overview
+    dashboard:
+      title: AutoCours Monitoring
+      panels:
+        - type: graph
+          title: Request Latency
+          targets:
+            - expr: rate(http_request_duration_seconds_sum[5m])

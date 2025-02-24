@@ -1,0 +1,4 @@
+- hosts: autocours_servers
+  become: yes
+  roles:
+    - autocours

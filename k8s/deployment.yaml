@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autocours-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: autocours
+  template:
+    metadata:
+      labels:
+        app: autocours
+    spec:
+      containers:
+        - name: autocours
+          image: votre_dockerhub/autocours:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: autocours-config

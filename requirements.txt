@@ -1,0 +1,10 @@
+fastapi
+streamlit
+uvicorn
+requests
+reportlab
+python-pptx
+transformers
+mlflow
+pytest
+numpy

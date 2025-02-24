@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  autocours:
+    build: .
+    container_name: autocours_app
+    ports:
+      - "8501:8501"  # Pour l'interface Streamlit
+      - "8000:8000"  # Pour l'API FastAPI
+    environment:
+      - LLM_API_KEY=votre_cle_api_llm
+      - LLM_API_URL=https://api.example.com/generate
+    volumes:
+      - ./:/app

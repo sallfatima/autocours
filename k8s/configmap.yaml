@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: autocours-config
+data:
+  LLM_API_KEY: "votre_cle_api_llm"
+  LLM_API_URL: "https://api.example.com/generate"
