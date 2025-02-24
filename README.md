@@ -26,7 +26,7 @@ enrichie par un module RAG et utilisant un modèle LLM (KingNish/Qwen2.5-0.5b-Te
 
 2. Installer les dépendances avec Poetry :
     ```bash
-    docker-compose up --build
+    poetry install
 
 3. Lancer l'application en local avec Docker Compose :
     ```bash
